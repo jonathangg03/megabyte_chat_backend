@@ -4,8 +4,11 @@ const path = require("path");
 const user = require("./routes/user");
 const message = require("./routes/message");
 const chat = require("./routes/chat");
+const connectDB = require("./db");
 
 const app = express();
+
+connectDB();
 
 app.set("PORT", process.env.API_PORT || 3000);
 
