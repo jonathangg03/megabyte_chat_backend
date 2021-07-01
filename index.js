@@ -4,6 +4,7 @@ const path = require("path");
 const user = require("./routes/user");
 const message = require("./routes/message");
 const chat = require("./routes/chat");
+require("dotenv").config();
 
 const app = express();
 
