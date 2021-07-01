@@ -12,7 +12,8 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  Chat.findById(req.params.id)
+  Chat.findOne({ _id: req.params.id })
+    .populate("users")
     .then((data) => response.success(req, res, data, 200))
     .catch((error) =>
       response.error(req, res, "Error al traer usuario", 500, error)
@@ -21,7 +22,7 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
   const newChat = new Chat({
-    users: [req.body.users],
+    users: req.body.users,
   });
   newChat
     .save()
