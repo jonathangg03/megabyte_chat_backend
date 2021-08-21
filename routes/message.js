@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:chatId", (req, res) => {
-  Message.findOne({ chat: req.params.chatId })
+  Message.find({ chat: req.params.chatId })
     .populate(["chat", "user"])
     .then((data) => response.success(req, res, data, 200))
     .catch((error) =>

@@ -1,24 +1,24 @@
-const express = require("express");
-const cors = require("cors");
-const path = require("path");
-const user = require("./routes/user");
-const message = require("./routes/message");
-const chat = require("./routes/chat");
-require("dotenv").config();
-const connectDB = require("./db");
+const express = require('express')
+const cors = require('cors')
+const path = require('path')
+const user = require('./routes/user')
+const message = require('./routes/message')
+const chat = require('./routes/chat')
+require('dotenv').config()
+const connectDB = require('./db')
 
-const app = express();
+const app = express()
 
-connectDB();
+connectDB()
 
-app.set("PORT", process.env.API_PORT || 3000);
+app.set('PORT', process.env.PORT || 3000)
 
-app.use(cors());
-app.use(express.json());
-app.use("/user", user);
-app.use("/message", message);
-app.use("/chat", chat);
+app.use(cors())
+app.use(express.json())
+app.use('/user', user)
+app.use('/message', message)
+app.use('/chat', chat)
 
-app.listen(app.get("PORT"), () =>
-  console.log(`Server on port ${app.get("PORT")}`)
-);
+app.listen(app.get('PORT'), () =>
+  console.log(`Server on port ${app.get('PORT')}`)
+)
