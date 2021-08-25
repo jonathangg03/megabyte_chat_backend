@@ -5,7 +5,7 @@ const user = require('./routes/user')
 const message = require('./routes/message')
 const chat = require('./routes/chat')
 const connectDB = require('./db')
-
+require('dotenv').config()
 const app = express()
 
 connectDB()
