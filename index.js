@@ -1,16 +1,15 @@
 const express = require('express')
 const cors = require('cors')
-const path = require('path')
 const user = require('./routes/user')
 const message = require('./routes/message')
 const chat = require('./routes/chat')
 const connectDB = require('./db')
-require('dotenv').config()
+const { port } = require('./config')
 const app = express()
 
 connectDB()
 
-app.set('PORT', process.env.PORT || 3000)
+app.set('PORT', port)
 
 app.use(cors())
 app.use(express.json())
