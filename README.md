@@ -1,4 +1,4 @@
-# Megabyte Chat - Servidor de Web Sockets
+# Megabyte Chat - API REST
 
 Un chat creado con Next.js, y usando Web Sockets para la comunicación en tiempo
 real. Puedes ver la aplicación [aquí](https://megabyte-chat.vercel.app/ 'aquí').
